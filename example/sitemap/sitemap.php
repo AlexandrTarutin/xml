@@ -35,7 +35,7 @@ $sitemaArr2 = array(
 
 
 $xml = new ingateXML();
-$xml->init(array('siteurl' => 'http://xml.dev-z.ru/'));
+$xml->init(array('siteurl' => 'http://xml.dev-z.ru/','itemCount' => 3));
 $xml->createSitemapXML($sitemaArr2, '/testing/sitemap/')
 //print_r($_SERVER);
 ?>

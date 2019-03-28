@@ -6,7 +6,7 @@ class IngateXML
     public static $debug = false;
     public static $dateformat = 'Y-m-d';
     public static $file = false;
-    public static $itemCount = 3;
+    public static $itemCount = 20000;
     public static $start = '<?xml version="1.0" encoding="UTF-8"?>';
     public static $siteurl = '';
     public static $changefreq = 'daily';
@@ -27,6 +27,9 @@ class IngateXML
         }
         if (isset($arrparams['start'])) {
             self::$start = $arrparams['start'];
+        }
+        if (isset($arrparams['itemCount'])) {
+            self::$itemCount = $arrparams['itemCount'];
         }
     }
 

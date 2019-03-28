@@ -5,5 +5,5 @@ ini_set('display_startup_errors', 1);
 ?>
 Примеры:
 <ul>
-    <li><a href="example/sitemap.php"?> sitemap</a></li>
+    <li><a href="/example/sitemap/sitemap.php" ?> sitemap</a></li>
 </ul>
