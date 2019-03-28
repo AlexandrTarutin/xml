@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE yml_catalog SYSTEM "shops.dtd">
+<yml_catalog date="2019-03-28 05:05">
+<shop >
+<name >Звезды общепита</name>
+<company >Звезды общепита</company>
+<url >https://www.zvezdy.ru/</url>
+<currencies >
+<currency id="RUB" rate="1" />
+</currencies>
+<delivery-options >
+<option cost="700"/>
+</delivery-options>
+<categories >
+<category id="109"/>
+<category id="109" parentId="109"/>
+</categories>
+<offers available="true">
+<offer id="3867" available="true">
+<price >6400.0000</price>
+<description >Изделия из полиэстера, современного качественного материала, получаются оригинальными и яркими, как жилет Меган.</description>
+<categoryId >42</categoryId>
+<url >http://10xl.dev-z.ru/zhenskaya-odezhda/verkhnyaya-odezhda?product_id=3867</url>
+</offer>
+<offer id="4358" available="true">
+<price >6200.0000</price>
+<description />
+<categoryId >35</categoryId>
+<url >http://10xl.dev-z.ru/muzhskaya-obuv/ms-tufli?product_id=4358</url>
+</offer>
+<offer id="4268" available="true">
+<price >2600.0000</price>
+<description />
+<categoryId >84</categoryId>
+<url >http://10xl.dev-z.ru/muzhskaya-obuv/tapki?product_id=4268</url>
+</offer>
+<offer id="5554" available="true">
+<price >7850.0000</price>
+<vendor >Голд</vendor>
+<categoryId >71</categoryId>
+<url >http://10xl.dev-z.ru/muzhskaya-odezhda/m-sportivnye-kostiumy?product_id=5554</url>
+</offer>
+<offer id="4587" available="true">
+<price >7450.0000</price>
+<vendor >Голд</vendor>
+<description />
+<categoryId >71</categoryId>
+<url >http://10xl.dev-z.ru/muzhskaya-odezhda/m-sportivnye-kostiumy?product_id=4587</url>
+</offer>
+</offers>
+</shop>
+</yml_catalog>

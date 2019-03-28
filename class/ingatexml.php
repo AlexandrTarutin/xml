@@ -201,8 +201,8 @@ class IngateXML
     */
     public static function startYandexGoods($params = '')
     {
-        $text = self::$start;
-        $text .= '<!DOCTYPE yml_catalog SYSTEM "shops.dtd">';
+        $text = self::$start. PHP_EOL;
+        $text .= '<!DOCTYPE yml_catalog SYSTEM "shops.dtd">'. PHP_EOL;
         $text .= self::xmlBeginTag('yml_catalog', 'date="' . date('Y-m-d h:i') . '"');
         $text .= self::xmlBeginTag('shop');
         if (is_array($params)) {
@@ -234,7 +234,7 @@ class IngateXML
     **
     */
 
-    public static function rowItemsSimple($params,$attrlist = '', $namelist = false, $nameitem = false)
+    public static function rowItemsSimple($params,$attrlist = 'ATTR', $namelist = false, $nameitem = false)
     {
 
         if (is_array($params)) {
