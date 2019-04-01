@@ -224,6 +224,7 @@ class IngateXML
     */
     public static function endYandexGoods()
     {
+        $text = '';
         $text .= self::xmlEndTag('shop');
         $text .= self::xmlEndTag('yml_catalog');
         return $text;
@@ -236,9 +237,8 @@ class IngateXML
 
     public static function rowItemsSimple($params,$attrlist = 'ATTR', $namelist = false, $nameitem = false)
     {
-
+        $text = '';
         if (is_array($params)) {
-            $text = '';
             if ($namelist) {
                 $text .= self::xmlBeginTag($namelist, $attrlist);
             }
@@ -294,7 +294,7 @@ class IngateXML
             }
 
         } else {
-            $text = xmlItem($params,$attrlist);
+            $text = self::xmlItem($params, $attrlist);
         }
         return $text;
     }
@@ -342,5 +342,3 @@ class IngateXML
         return $NewContent;
     }
 }
-
-?>
