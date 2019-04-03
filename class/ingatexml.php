@@ -106,7 +106,7 @@ class IngateXML
     */
     public static function viewSitemapXML($params)
     {
-        $text = "<?xml version='1.0' encoding='UTF-8'?>" . PHP_EOL;
+        $text = self::$start . PHP_EOL;
         $text .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . PHP_EOL;
         foreach ($params as $key => $value) {
             if (is_array($value)) {
@@ -140,7 +140,7 @@ class IngateXML
         if (count($params) > self::$itemCount) {
             $params = array_chunk($params, self::$itemCount);
             $i = 0;
-            $textIndex = "<?xml version='1.0' encoding='UTF-8'?>" . PHP_EOL;
+            $textIndex = self::$start . PHP_EOL;
             $textIndex .= "<sitemapindex>" . PHP_EOL;
 
             foreach ($params as $key => $part) {
@@ -235,7 +235,7 @@ class IngateXML
     **
     */
 
-    public static function rowItemsSimple($params,$attrlist = 'ATTR', $namelist = false, $nameitem = false)
+    public static function rowItemsSimple($params,$attrlist = '', $namelist = false, $nameitem = false)
     {
         $text = '';
         if (is_array($params)) {
