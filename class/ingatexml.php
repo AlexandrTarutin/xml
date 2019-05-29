@@ -341,4 +341,49 @@ class IngateXML
         $NewContent = strip_tags($NewContent, '<p><b><br><ul><h2><h3><h4><h5><h6><a><li><strong><figure><img>');
         return $NewContent;
     }
+    public static function makeUtmMark($array = false, $translit = true){
+        if ($array){
+            $str_prefix = '?';
+            $position = 0;
+            $str_item_prefix = '';
+            foreach ($array as $key => $value) {
+                if ($position != 0 ){
+                    $str_item_prefix = '&';
+                }
+                if ($value){
+                    if ($translit){
+                        $value = self::clearTranslit($value);
+                    }
+                    $str .= $str_item_prefix.urlencode($key).'='.urlencode($value);
+                } else {
+                    $str .= $str_item_prefix.urlencode($key);
+                }
+
+                $position++;
+            }
+            return $str_prefix.$str;
+        } else {
+            return false;
+        }
+    }
+    function clearTranslit($string, $to = 'RuEn') {
+        $dictionary = array(
+            'а' => 'a', 'б' => 'b', 'в' => 'v', 'г' => 'g', 'д' => 'd', 'е' => 'e', 'ё' => 'yo', 'ж' => 'zh', 'з' => 'z', 'и' => 'i', 'й' => 'j', 'к' => 'k', 'л' => 'l', 'м' => 'm',
+            'н' => 'n', 'о' => 'o', 'п' => 'p', 'р' => 'r', 'с' => 's', 'т' => 't', 'у' => 'u', 'ф' => 'f', 'х' => 'x', 'ц' => 'c', 'ч' => 'ch', 'ш' => 'sh', 'щ' => 'shh',
+            'ь' => '\'', 'ы' => 'y', 'ъ' => '\'\'', 'э' => 'e\'', 'ю' => 'yu', 'я' => 'ya', 'А' => 'A', 'Б' => 'B', 'В' => 'V', 'Г' => 'G', 'Д' => 'D', 'Е' => 'E',
+            'Ё' => 'YO', 'Ж' => 'Zh', 'З' => 'Z', 'И' => 'I', 'Й' => 'J', 'К' => 'K', 'Л' => 'L', 'М' => 'M', 'Н' => 'N', 'О' => 'O', 'П' => 'P', 'Р' => 'R', 'С' => 'S',
+            'Т' => 'T', 'У' => 'U', 'Ф' => 'F', 'Х' => 'X', 'Ц' => 'C', 'Ч' => 'CH', 'Ш' => 'SH', 'Щ' => 'SHH', 'Ь' => '\'', 'Ы' => 'Y\'', 'Ъ' => '\'\'', 'Э' => 'E\'',
+            'Ю' => 'YU', 'Я' => 'YA',
+        );
+
+        if ($to == 'EnRu'){
+            $to = array_flip($dictionary) ;
+
+        } else {
+            $to =$dictionary;
+        }
+
+        return strtr($string, $to );
+    }
+
 }
